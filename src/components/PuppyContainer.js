@@ -4,7 +4,11 @@ import PuppyCard from './PuppyCard'
 function PuppyContainer(props) {
 
     const makePuppyCards = props.puppies.map(puppy => {
-        return <PuppyCard key={puppy.id} puppy={puppy} />
+        return <PuppyCard 
+            addPuppyToFavorites={props.addPuppyToFavorites} 
+            key={puppy.id} 
+            puppy={puppy}
+        />
     })
 
     return  (
