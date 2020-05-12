@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import PuppyContainer from './components/PuppyContainer'
+import Favorites from './components/Favorites'
 
 
 class App extends Component {
 
   state = {
-    puppies: []
+    puppies: [],
+    favorites: []
   }
 
   componentDidMount() {
@@ -15,10 +17,21 @@ class App extends Component {
       .then(puppies => this.setState({ puppies }))
   }
 
+  addPuppyToFavorites = (puppy) => {
+    this.setState({ favorites: [...this.state.favorites, puppy] })
+  }
+
   render() {
     return (
       <div className="App">
-        <PuppyContainer puppies={this.state.puppies} />
+
+        <Favorites favorites={this.state.favorites}/>
+
+        <PuppyContainer 
+          addPuppyToFavorites={this.addPuppyToFavorites}
+          puppies={this.state.puppies} 
+        />
+
       </div>
     )
   }

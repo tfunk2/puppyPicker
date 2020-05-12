@@ -12,9 +12,18 @@
   box-shadow: black 2pt 2pt 2pt 2pt;
   text-align: center;
   margin: 6px;
+  background-color: white;
 }
 
 .puppy-image {
   max-width: 100%;
   min-width: 100%;
+}
+
+.favorites {
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
